@@ -1,0 +1,6 @@
+r
+loadbin build\ARTERY.bin, 0x08000000
+verifybin build\ARTERY.bin, 0x08000000
+r
+g
+q

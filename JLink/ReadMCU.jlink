@@ -1,0 +1,4 @@
+savebin build\ARTERY.bin, 0x08000000, 0x080FFFFF
+r
+g
+q

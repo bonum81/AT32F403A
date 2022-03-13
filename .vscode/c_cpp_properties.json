@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "arm_c_cpp_properties",
+            "compilerPath": "C:/Software/EmbeddedGCC/bin/arm-none-eabi-g++.exe",
+            "includePath": [
+                "${workspaceFolder}\\**",
+                "${workspaceFolder}\\libraries\\drivers\\inc**",
+                "${workspaceFolder}\\libraries\\cmsis\\cm4\\device_support**",
+                "${workspaceFolder}\\libraries\\cmsis\\cm4\\core_support**"
+            ], 
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "AT32F407AVGT7"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,41 @@
+add_library(stdlibraries STATIC
+    cmsis/cm4/device_support/startup/gcc/startup_at32f403a_407.s
+    cmsis/cm4/device_support/system_at32f403a_407.c
+    drivers/src/at32f403a_407_acc.c
+    drivers/src/at32f403a_407_adc.c
+    drivers/src/at32f403a_407_bpr.c
+    drivers/src/at32f403a_407_can.c
+    drivers/src/at32f403a_407_crc.c
+    drivers/src/at32f403a_407_crm.c
+    drivers/src/at32f403a_407_dac.c
+    drivers/src/at32f403a_407_debug.c
+    drivers/src/at32f403a_407_dma.c
+    drivers/src/at32f403a_407_emac.c
+    drivers/src/at32f403a_407_exint.c
+    drivers/src/at32f403a_407_flash.c
+    drivers/src/at32f403a_407_gpio.c
+    drivers/src/at32f403a_407_i2c.c
+    drivers/src/at32f403a_407_misc.c
+    drivers/src/at32f403a_407_pwc.c
+    drivers/src/at32f403a_407_rtc.c
+    drivers/src/at32f403a_407_sdio.c
+    drivers/src/at32f403a_407_spi.c
+    drivers/src/at32f403a_407_tmr.c
+    drivers/src/at32f403a_407_usart.c
+    drivers/src/at32f403a_407_usb.c
+    drivers/src/at32f403a_407_wdt.c
+    drivers/src/at32f403a_407_wwdt.c
+    drivers/src/at32f403a_407_xmc.c
+)
+
+target_include_directories(stdlibraries PUBLIC
+	#Config
+	#CMSIS/CM3/CoreSupport
+	#CMSIS/CM3/DeviceSupport/MDR32F9Qx/inc
+	#CMSIS/CM3/DeviceSupport/MDR32F9Qx/startup
+	#MDR32F9Qx_StdPeriph_Driver/inc
+	#MDR32F9Qx_StdPeriph_Driver/inc/USB_Library
+    cmsis/cm4/core_support
+    cmsis/cm4/device_support
+    drivers/inc
+)

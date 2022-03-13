@@ -1,0 +1,147 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Rebuild and program",
+			"type": "shell",
+			"command": "cmake --build . --clean-first && openocd -f interface/jlink.cfg -c \"transport select swd\" -f target/mdr32f9q2i.cfg -c \"program ./build/MDR32.elf verify reset exit\"",
+			"options": {
+				"cwd": "${workspaceRoot}/build",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Rebuild",
+			"type": "shell",
+			"command": "cmake --build /build --clean-first",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "CMake Build -j all",
+			"type": "shell",
+			"command": "cmake --build . -- -j all",
+			"options": {
+				"cwd": "${workspaceRoot}/build",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "CMake Rebuild",
+			"type": "shell",
+			"command": "cmake --build . --clean-first",
+			"options": {
+				"cwd": "${workspaceRoot}/build",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+            "problemMatcher": []
+		},
+		{
+			"label": "Write to Flash MCU",
+			"type": "shell",
+			"command": "openocd -f interface/jlink.cfg -c \"transport select swd\" -f target/at32f4xx.cfg -c \"program ./build/ARTERY.elf verify reset exit\"",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": [
+						"/C"
+					]
+				}
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Write to Flash SEGGER JLINK",
+			"type": "shell",
+			"command": "JLink.exe -Device AT32F403AVGT7 -If SWD -Speed 1000 JLink\\FlashMCU.jlink",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": [
+						"/C"
+					]
+				}
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Erasing Flash MCU",
+			"type": "shell",
+			"command": "openocd -f interface/jlink.cfg -c \"transport select swd\" -f target/mdr32f9q2i.cfg  -c \"init\" -c \"halt\" -c \"flash erase_sector 0 0 last\" -c \"reset\" -c \"exit\"",
+			//"command": "openocd -f interface/jlink.cfg -c \"transport select swd\" -f target/mdr32f9q2i.cfg  -c \"program init halt\" -c \"program flash erase_sector 0 0 last\" -c \"program reset exit\"",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": [
+						"/C"
+					]
+				}
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Reset MCU",
+			"type": "shell",
+			"command": "openocd -f interface/jlink.cfg -c \"transport select swd\" -f target/mdr32f9q2i.cfg  -c \"init\" -c \"halt\" -c \"reset\" -c \"exit\"",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": [
+						"/C"
+					]
+				}
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"cortex-debug.openocdPath": "C:/Software/OpenOCD-20210729-0.11.0/bin/openocd.exe",
+    "files.associations": {
+      "mdr32f9qx_it.h": "c",
+      "main.h": "c",
+      "mdr32fx.h": "c",
+      "gpio.h": "c",
+      "mdr32f9qx_rst_clk.h": "c",
+      "freertos.h": "c",
+      "freertosconfig.h": "c",
+      "mdr32f9qx_port.h": "c",
+      "mdr32f9qx_config.h": "c",
+      "mdr32f9qx_lib.h": "c",
+      "mdr32f9qx_mil_std_1553.h": "c",
+      "mdr32f9qx_eeprom.h": "c",
+      "system_mdr32f9qx.h": "c",
+      "w5500.h": "c",
+      "wizchip_conf.h": "c",
+      "init.h": "c",
+      "paramsys.h": "c",
+      "mdr32f9qx_usb.h": "c",
+      "can.h": "c",
+      "app.h": "c"
+    },
+    "terminal.integrated.profiles.windows": {
+        "PowerShell -NoProfile": {
+          "source": "PowerShell",
+          "args": ["-NoProfile"]
+        }
+      },
+      "terminal.integrated.profiles.linux": {
+        "zsh (login)": {
+          "path": "zsh",
+          "args": ["-l"]
+        }
+      }
+}
